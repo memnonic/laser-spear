@@ -19,6 +19,7 @@
   "dependencies": {
     "@indoorequal/vue-maplibre-gl": "^8.4.2",
     "@quasar/extras": "^1.17.0",
+    "@vueuse/core": "^14.2.0",
     "maplibre-gl": "^5.17.0",
     "mitt": "^3.0.1",
     "quasar": "^2.18.6",
