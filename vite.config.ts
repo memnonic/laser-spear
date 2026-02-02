@@ -6,20 +6,30 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 import { quasar, transformAssetUrls } from '@quasar/vite-plugin'
 
 // https://vite.dev/config/
-export default defineConfig({
-  base: '/laser-spear/',
-  plugins: [
-    vue({
-      template: { transformAssetUrls },
-    }),
-    quasar({
-      sassVariables: fileURLToPath(new URL('./src/quasar-variables.scss', import.meta.url)),
-    }),
-    vueDevTools(),
-  ],
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
+export default defineConfig(({ command }) => {
+  const defaultConfig = {
+    plugins: [
+      vue({
+        template: { transformAssetUrls },
+      }),
+      quasar({
+        sassVariables: fileURLToPath(new URL('./src/quasar-variables.scss', import.meta.url)),
+      }),
+      vueDevTools(),
+    ],
+    resolve: {
+      alias: {
+        '@': fileURLToPath(new URL('./src', import.meta.url)),
+      },
     },
-  },
+  }
+
+  if (command === 'build') {
+    return {
+      ...defaultConfig,
+      base: '/laser-spear/',
+    }
+  }
+
+  return defaultConfig;
 })
