@@ -1,11 +1,12 @@
 import { createApp } from 'vue'
-import { Quasar } from 'quasar';
+import { Quasar } from 'quasar'
+import VueMaplibreGl from '@indoorequal/vue-maplibre-gl'
 
-import '@quasar/extras/roboto-font/roboto-font.css';
-import '@quasar/extras/material-icons/material-icons.css';
+import 'maplibre-gl/dist/maplibre-gl.css';
+import '@quasar/extras/roboto-font/roboto-font.css'
+import '@quasar/extras/material-icons/material-icons.css'
 import '@quasar/extras/material-icons-outlined/material-icons-outlined.css'
-
-import 'quasar/src/css/index.sass';
+import 'quasar/src/css/index.sass'
 
 import App from './App.vue'
 
@@ -16,7 +17,9 @@ const app = createApp(App)
 app.use(router)
 
 app.use(Quasar, {
-  plugins: {}
+  plugins: {},
 })
+
+app.use(VueMaplibreGl)
 
 app.mount('#app')
