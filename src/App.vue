@@ -1,20 +1,23 @@
 <script setup lang="ts">
 import { QLayout, QDrawer, QPageContainer } from 'quasar'
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import NavButton from '@/components/NavButton.vue'
 import { formatGoogleMapsState } from '@/views/Map/utils/formatGoogleMapsState.ts'
 import { DEFAULT_MAP_STATE } from '@/const.ts'
+import { useMapStore } from '@/stores/map/map.ts'
+
+const mapStore = useMapStore()
 
 const isDrawerOpen = ref(true)
 
-const navButtons = [
+const navButtons = computed(() => [
   {
     icon: 'o_map',
     text: 'Map',
     to: {
       name: 'map',
       params: {
-        state: formatGoogleMapsState(DEFAULT_MAP_STATE),
+        state: mapStore.lastState ?? formatGoogleMapsState(DEFAULT_MAP_STATE),
       },
     },
   },
@@ -28,7 +31,7 @@ const navButtons = [
     text: 'Burials',
     to: { name: 'burials' },
   },
-]
+])
 </script>
 
 <template>
