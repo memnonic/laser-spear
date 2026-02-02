@@ -5,11 +5,6 @@ import type { MapRouteState } from '@/types.ts'
 import { formatGoogleMapsState } from '@/views/Map/utils/formatGoogleMapsState.ts'
 import { DEFAULT_MAP_STATE } from '@/const.ts'
 
-function numOrUndef(v: unknown) {
-  const n = Number(v)
-  return Number.isFinite(n) ? n : undefined
-}
-
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
