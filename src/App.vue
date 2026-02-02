@@ -2,6 +2,8 @@
 import { QLayout, QDrawer, QPageContainer } from 'quasar'
 import { ref } from 'vue'
 import NavButton from '@/components/NavButton.vue'
+import { formatGoogleMapsState } from '@/views/Map/utils/formatGoogleMapsState.ts'
+import { DEFAULT_MAP_STATE } from '@/const.ts'
 
 const isDrawerOpen = ref(true)
 
@@ -9,7 +11,12 @@ const navButtons = [
   {
     icon: 'o_map',
     text: 'Map',
-    to: { name: 'map' },
+    to: {
+      name: 'map',
+      params: {
+        state: formatGoogleMapsState(DEFAULT_MAP_STATE),
+      },
+    },
   },
   {
     icon: 'o_group',
@@ -20,14 +27,27 @@ const navButtons = [
     icon: 'o_location_on',
     text: 'Burials',
     to: { name: 'burials' },
-  }
+  },
 ]
 </script>
 
 <template>
   <QLayout view="lHh lpR lFf">
-    <QDrawer side="left" :width="72" v-model="isDrawerOpen" persistent elevated class="app-nav-panel">
-      <NavButton v-for="button in navButtons" :key="button.icon" :icon="button.icon" :text="button.text" :to="button.to" />
+    <QDrawer
+      side="left"
+      :width="72"
+      v-model="isDrawerOpen"
+      persistent
+      elevated
+      class="app-nav-panel"
+    >
+      <NavButton
+        v-for="button in navButtons"
+        :key="button.icon"
+        :icon="button.icon"
+        :text="button.text"
+        :to="button.to"
+      />
     </QDrawer>
 
     <QPageContainer>

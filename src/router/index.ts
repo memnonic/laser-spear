@@ -1,5 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { BurialsView, FraternitiesView, MapView } from '@/views'
+import { parseGoogleMapsState } from '@/views/Map/utils/parseGoogleMapsState.ts'
+import type { MapRouteState } from '@/types.ts'
+import { formatGoogleMapsState } from '@/views/Map/utils/formatGoogleMapsState.ts'
+import { DEFAULT_MAP_STATE } from '@/const.ts'
 
 function numOrUndef(v: unknown) {
   const n = Number(v)
@@ -11,13 +15,18 @@ const router = createRouter({
   routes: [
     {
       path: '/',
+      redirect: () => ({
+        name: 'map',
+        params: {
+          state: formatGoogleMapsState(DEFAULT_MAP_STATE),
+        },
+      }),
+    },
+    {
+      path: '/map/@:state',
       name: 'map',
       component: MapView,
-      props: (route) => ({
-        lat: numOrUndef(route.query.lat),
-        lng: numOrUndef(route.query.lng),
-        z: numOrUndef(route.query.z),
-      }),
+      props: (route): MapRouteState => parseGoogleMapsState(route.params.state),
     },
     {
       path: '/fraternities',
