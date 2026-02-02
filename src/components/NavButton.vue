@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { QIcon } from 'quasar'
-import { computed } from 'vue'
 import type { RouteLocationRaw } from 'vue-router'
 
 interface Props {
