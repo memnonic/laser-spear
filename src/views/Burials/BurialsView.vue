@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  MapView.vue
+  BurialsView.vue
 </template>
 
 <style scoped>

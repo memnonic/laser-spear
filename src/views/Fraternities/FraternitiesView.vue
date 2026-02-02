@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  MapView.vue
+  FraternitiesView.vue
 </template>
 
 <style scoped>

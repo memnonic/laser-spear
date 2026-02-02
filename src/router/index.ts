@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import MapView from '@/views/Map/MapView.vue'
+import { BurialsView, FraternitiesView, MapView } from '@/views'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -8,7 +8,17 @@ const router = createRouter({
       path: '/',
       name: 'map',
       component: MapView,
-    }
+    },
+    {
+      path: '/fraternities',
+      name: 'fraternities',
+      component: FraternitiesView,
+    },
+    {
+      path: '/burials',
+      name: 'burials',
+      component: BurialsView,
+    },
   ],
 })
 
