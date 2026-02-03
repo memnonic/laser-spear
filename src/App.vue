@@ -91,3 +91,11 @@ const navButtons = computed(() => [
   }
 }
 </style>
+
+<style lang="scss">
+.ls-page {
+  padding: 1.5rem;
+  background-color: $blue-grey-2;
+  height: 100%;
+}
+</style>
