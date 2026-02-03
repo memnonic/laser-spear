@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import { BurialsView, FraternitiesView, MapView } from '@/views'
 import { parseGoogleMapsState } from '@/views/Map/utils/parseGoogleMapsState.ts'
 import type { MapRouteState } from '@/types.ts'
@@ -6,7 +6,7 @@ import { formatGoogleMapsState } from '@/views/Map/utils/formatGoogleMapsState.t
 import { DEFAULT_MAP_STATE } from '@/const.ts'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
