@@ -6,8 +6,11 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 import { quasar, transformAssetUrls } from '@quasar/vite-plugin'
 
 // https://vite.dev/config/
-export default defineConfig(({ command }) => {
-  const defaultConfig = {
+export default defineConfig(({ mode }) => {
+  const isProduction = mode === 'production'
+
+  return {
+    ...(isProduction ? { base: '/laser-spear/' } : {}),
     plugins: [
       vue({
         template: { transformAssetUrls },
@@ -23,13 +26,4 @@ export default defineConfig(({ command }) => {
       },
     },
   }
-
-  if (command === 'build') {
-    return {
-      ...defaultConfig,
-      base: '/laser-spear/',
-    }
-  }
-
-  return defaultConfig;
 })
