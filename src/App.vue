@@ -1,14 +1,17 @@
 <script setup lang="ts">
-import { QLayout, QDrawer, QPageContainer } from 'quasar'
+import { QLayout, QDrawer, QPageContainer, QFooter } from 'quasar'
 import { computed, ref } from 'vue'
 import NavButton from '@/components/NavButton.vue'
 import { formatGoogleMapsState } from '@/views/Map/utils/formatGoogleMapsState.ts'
 import { DEFAULT_MAP_STATE } from '@/const.ts'
 import { useMapStore } from '@/stores/map/map.ts'
+import { breakpointsQuasar, useBreakpoints } from '@vueuse/core'
 
 const mapStore = useMapStore()
+const breakpoints = useBreakpoints(breakpointsQuasar)
 
 const isDrawerOpen = ref(true)
+const isMobile = computed(() => breakpoints.smaller('sm'))
 
 const navButtons = computed(() => [
   {
@@ -37,12 +40,15 @@ const navButtons = computed(() => [
 <template>
   <QLayout view="lHh lpR lFf">
     <QDrawer
+      v-if="!isMobile.value"
       side="left"
       :width="72"
       v-model="isDrawerOpen"
       persistent
-      elevated
-      class="app-nav-panel"
+      bordered
+      behavior="desktop"
+      class="app-nav-panel bg-grey-1"
+      show-if-above
     >
       <NavButton
         v-for="button in navButtons"
@@ -52,6 +58,16 @@ const navButtons = computed(() => [
         :to="button.to"
       />
     </QDrawer>
+
+    <QFooter v-else bordered class="app-bottom-nav-panel bg-grey-1">
+      <NavButton
+        v-for="button in navButtons"
+        :key="button.icon"
+        :icon="button.icon"
+        :text="button.text"
+        :to="button.to"
+      />
+    </QFooter>
 
     <QPageContainer>
       <RouterView />
@@ -65,5 +81,13 @@ const navButtons = computed(() => [
   flex-direction: column;
   gap: 0.75rem;
   padding-top: 1rem;
+}
+
+:deep(.app-bottom-nav-panel) {
+  display: flex;
+
+  a {
+    flex: 1 1 auto;
+  }
 }
 </style>
