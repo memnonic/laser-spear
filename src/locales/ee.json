@@ -1,0 +1,38 @@
+{
+  "common.yes": "Jah",
+  "common.no": "Ei",
+
+  "leftNav.map": "Kaart",
+  "leftNav.fraternities": "Korporatsioonid",
+  "leftNav.cemeteries": "Kalmistud",
+  "leftNav.burials": "Matmised",
+
+  "fraternities.title": "Korporatsioonid",
+  "fraternities.table.isActive": "Aktiivne",
+  "fraternities.table.colors": "Värvid",
+  "fraternities.table.name": "Nimi",
+  "fraternities.table.motto": "Moto",
+  "fraternities.table.founded": "Asutamise kuupäev",
+  "fraternities.table.foundedIn": "Päritolulinn",
+
+  "cemeteries.title": "Kalmistud",
+  "cemeteries.table.name": "Nimi",
+  "cemeteries.table.city": "Linn",
+  "cemeteries.table.address": "Aadress",
+  "cemeteries.table.phone": "Telefon",
+  "cemeteries.table.email": "E-post",
+  "cemeteries.table.openingHours": "Lahtiolekuajad",
+
+  "burials.title": "Matmised",
+  "burials.table.surname": "Perekonnanimi",
+  "burials.table.firstName": "Eesnimi",
+  "burials.table.fraternities": "Korporatsioon",
+  "burials.table.dateOfBirth": "Sünnikuupäev",
+  "burials.table.dateOfDeath": "Surmakuupäev",
+  "burials.table.cemetery": "Kalmistu",
+  "burials.table.city": "Linn",
+  "burials.table.sector": "Sektor",
+  "burials.table.row": "Rida",
+  "burials.table.grave": "Haud",
+  "burials.table.area": "Piirkond"
+}

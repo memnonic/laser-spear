@@ -4,6 +4,7 @@ import { parseGoogleMapsState } from '@/views/Map/utils/parseGoogleMapsState.ts'
 import type { MapRouteState } from '@/types.ts'
 import { formatGoogleMapsState } from '@/views/Map/utils/formatGoogleMapsState.ts'
 import { DEFAULT_MAP_STATE } from '@/const.ts'
+import CemeteriesView from '@/views/Cemeteries/CemeteriesView.vue'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -32,6 +33,11 @@ const router = createRouter({
       path: '/burials',
       name: 'burials',
       component: BurialsView,
+    },
+    {
+      path: '/cemeteries',
+      name: 'cemeteries',
+      component: CemeteriesView,
     },
   ],
 })

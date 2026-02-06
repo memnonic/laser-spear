@@ -1,0 +1,38 @@
+{
+  "common.yes": "Yes",
+  "common.no": "No",
+
+  "leftNav.map": "Map",
+  "leftNav.fraternities": "Fraternities",
+  "leftNav.cemeteries": "Cemeteries",
+  "leftNav.burials": "Burials",
+
+  "fraternities.title": "Fraternities",
+  "fraternities.table.isActive": "Active",
+  "fraternities.table.colors": "Colors",
+  "fraternities.table.name": "Name",
+  "fraternities.table.motto": "Motto",
+  "fraternities.table.founded": "Date founded",
+  "fraternities.table.foundedIn": "City of origin",
+
+  "cemeteries.title": "Cemeteries",
+  "cemeteries.table.name": "Name",
+  "cemeteries.table.city": "City",
+  "cemeteries.table.address": "Address",
+  "cemeteries.table.phone": "Phone",
+  "cemeteries.table.email": "Email",
+  "cemeteries.table.openingHours": "Opening hours",
+
+  "burials.title": "Burials",
+  "burials.table.surname": "Surname",
+  "burials.table.firstName": "First name",
+  "burials.table.fraternities": "Fraternity",
+  "burials.table.dateOfBirth": "Date of birth",
+  "burials.table.dateOfDeath": "Date of death",
+  "burials.table.cemetery": "Cemetery",
+  "burials.table.city": "City",
+  "burials.table.sector": "Sector",
+  "burials.table.row": "Row",
+  "burials.table.grave": "Grave",
+  "burials.table.area": "Area"
+}

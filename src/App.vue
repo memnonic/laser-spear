@@ -6,6 +6,7 @@ import { formatGoogleMapsState } from '@/views/Map/utils/formatGoogleMapsState.t
 import { DEFAULT_MAP_STATE } from '@/const.ts'
 import { useMapStore } from '@/stores/map/map.ts'
 import { breakpointsQuasar, useBreakpoints } from '@vueuse/core'
+import i18n from '@/plugins/i18n.plugin.ts';
 
 const mapStore = useMapStore()
 const breakpoints = useBreakpoints(breakpointsQuasar)
@@ -16,7 +17,7 @@ const isMobile = computed(() => breakpoints.smaller('sm'))
 const navButtons = computed(() => [
   {
     icon: 'o_map',
-    text: 'Map',
+    text: i18n.t('leftNav.map'),
     to: {
       name: 'map',
       params: {
@@ -26,12 +27,17 @@ const navButtons = computed(() => [
   },
   {
     icon: 'o_group',
-    text: 'Fraternities',
+    text: i18n.t('leftNav.fraternities'),
     to: { name: 'fraternities' },
   },
   {
+    icon: 'o_church',
+    text: i18n.t('leftNav.cemeteries'),
+    to: { name: 'cemeteries' },
+  },
+  {
     icon: 'o_location_on',
-    text: 'Burials',
+    text: i18n.t('leftNav.burials'),
     to: { name: 'burials' },
   },
 ])
@@ -69,7 +75,7 @@ const navButtons = computed(() => [
       />
     </QFooter>
 
-    <QPageContainer>
+    <QPageContainer style="height: 100vh">
       <RouterView />
     </QPageContainer>
   </QLayout>

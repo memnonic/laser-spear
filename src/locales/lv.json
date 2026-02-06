@@ -1,0 +1,38 @@
+{
+  "common.yes": "Jā",
+  "common.no": "Nē",
+
+  "leftNav.map": "Karte",
+  "leftNav.fraternities": "Korporācijas",
+  "leftNav.cemeteries": "Kapsētas",
+  "leftNav.burials": "Apbedījumi",
+
+  "fraternities.title": "Korporācijas",
+  "fraternities.table.isActive": "Aktīva",
+  "fraternities.table.colors": "Krāsas",
+  "fraternities.table.name": "Nosaukums",
+  "fraternities.table.motto": "Devīze",
+  "fraternities.table.founded": "Dibināšanas datums",
+  "fraternities.table.foundedIn": "Izcelsmes pilsēta",
+
+  "cemeteries.title": "Kapsētas",
+  "cemeteries.table.name": "Nosaukums",
+  "cemeteries.table.city": "Pilsēta",
+  "cemeteries.table.address": "Adrese",
+  "cemeteries.table.phone": "Tālrunis",
+  "cemeteries.table.email": "E-pasts",
+  "cemeteries.table.openingHours": "Darba laiks",
+
+  "burials.title": "Apbedījumi",
+  "burials.table.surname": "Uzvārds",
+  "burials.table.firstName": "Vārds",
+  "burials.table.fraternities": "Korporācija",
+  "burials.table.dateOfBirth": "Dzimšanas datums",
+  "burials.table.dateOfDeath": "Miršanas datums",
+  "burials.table.cemetery": "Kapsēta",
+  "burials.table.city": "Pilsēta",
+  "burials.table.sector": "Sektors",
+  "burials.table.row": "Rinda",
+  "burials.table.grave": "Kaps",
+  "burials.table.area": "Apvidus"
+}

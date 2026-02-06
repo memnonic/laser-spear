@@ -1,0 +1,38 @@
+{
+  "common.yes": "Да",
+  "common.no": "Нет",
+
+  "leftNav.map": "Карта",
+  "leftNav.fraternities": "Корпорации",
+  "leftNav.cemeteries": "Кладбища",
+  "leftNav.burials": "Захоронения",
+
+  "fraternities.title": "Корпорации",
+  "fraternities.table.isActive": "Активная",
+  "fraternities.table.colors": "Цвета",
+  "fraternities.table.name": "Название",
+  "fraternities.table.motto": "Девиз",
+  "fraternities.table.founded": "Дата основания",
+  "fraternities.table.foundedIn": "Город основания",
+
+  "cemeteries.title": "Кладбища",
+  "cemeteries.table.name": "Название",
+  "cemeteries.table.city": "Город",
+  "cemeteries.table.address": "Адрес",
+  "cemeteries.table.phone": "Телефон",
+  "cemeteries.table.email": "Электронная почта",
+  "cemeteries.table.openingHours": "Часы работы",
+
+  "burials.title": "Захоронения",
+  "burials.table.surname": "Фамилия",
+  "burials.table.firstName": "Имя",
+  "burials.table.fraternities": "Корпорация",
+  "burials.table.dateOfBirth": "Дата рождения",
+  "burials.table.dateOfDeath": "Дата смерти",
+  "burials.table.cemetery": "Кладбище",
+  "burials.table.city": "Город",
+  "burials.table.sector": "Сектор",
+  "burials.table.row": "Ряд",
+  "burials.table.grave": "Могила",
+  "burials.table.area": "Участок"
+}

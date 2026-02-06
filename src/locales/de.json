@@ -1,0 +1,38 @@
+{
+  "common.yes": "Ja",
+  "common.no": "Nein",
+
+  "leftNav.map": "Karte",
+  "leftNav.fraternities": "Korps",
+  "leftNav.cemeteries": "Friedhöfe",
+  "leftNav.burials": "Bestattungen",
+
+  "fraternities.title": "Korps",
+  "fraternities.table.isActive": "Aktiv",
+  "fraternities.table.colors": "Farben",
+  "fraternities.table.name": "Name",
+  "fraternities.table.motto": "Motto",
+  "fraternities.table.founded": "Gründungsdatum",
+  "fraternities.table.foundedIn": "Gründungsstadt",
+
+  "cemeteries.title": "Friedhöfe",
+  "cemeteries.table.name": "Name",
+  "cemeteries.table.city": "Stadt",
+  "cemeteries.table.address": "Adresse",
+  "cemeteries.table.phone": "Telefon",
+  "cemeteries.table.email": "E-Mail",
+  "cemeteries.table.openingHours": "Öffnungszeiten",
+
+  "burials.title": "Bestattungen",
+  "burials.table.surname": "Nachname",
+  "burials.table.firstName": "Vorname",
+  "burials.table.fraternities": "Korps",
+  "burials.table.dateOfBirth": "Geburtsdatum",
+  "burials.table.dateOfDeath": "Sterbedatum",
+  "burials.table.cemetery": "Friedhof",
+  "burials.table.city": "Stadt",
+  "burials.table.sector": "Sektor",
+  "burials.table.row": "Reihe",
+  "burials.table.grave": "Grab",
+  "burials.table.area": "Bereich"
+}

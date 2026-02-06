@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import { Quasar } from 'quasar'
 import { createPinia } from 'pinia'
 import VueMaplibreGl from '@indoorequal/vue-maplibre-gl'
+import i18n from '@/plugins/i18n.plugin.ts';
 
 import 'maplibre-gl/dist/maplibre-gl.css'
 import '@quasar/extras/roboto-font/roboto-font.css'
@@ -26,5 +27,7 @@ app.use(Quasar, {
 })
 
 app.use(VueMaplibreGl)
+
+app.use(i18n.plugin)
 
 app.mount('#app')

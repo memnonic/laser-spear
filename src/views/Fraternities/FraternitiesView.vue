@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { QCard, QTable, type QTableColumn } from 'quasar'
+import i18n from '@/plugins/i18n.plugin.ts';
 
 interface Fraternity {
   name: string
@@ -14,42 +15,42 @@ interface Fraternity {
 const columns: QTableColumn<Fraternity>[] = [
   {
     name: 'isActive',
-    label: 'Is active',
-    field: (row) => (row.isActive ? 'Yes' : 'No'),
+    label: i18n.t('fraternities.table.isActive'),
+    field: (row) => (row.isActive ? i18n.t('common.yes') : i18n.t('common.no')),
     align: 'center',
     sortable: true,
   },
   {
     name: 'colors',
-    label: 'Colors',
+    label: i18n.t('fraternities.table.colors'),
     field: 'colors',
     align: 'center',
     sortable: false,
   },
   {
     name: 'name',
-    label: 'Name',
+    label: i18n.t('fraternities.table.name'),
     field: (row) => row.name,
     align: 'left',
     sortable: true,
   },
   {
     name: 'motto',
-    label: 'Motto',
+    label: i18n.t('fraternities.table.motto'),
     field: (row) => row.motto,
     align: 'left',
     sortable: false,
   },
   {
     name: 'founded',
-    label: 'Founding date',
+    label: i18n.t('fraternities.table.founded'),
     field: (row) => row.founded,
     align: 'right',
     sortable: true,
   },
   {
     name: 'foundedIn',
-    label: 'Founding city',
+    label: i18n.t('fraternities.table.foundedIn'),
     field: (row) => row.foundedIn,
     align: 'left',
     sortable: true,
@@ -103,7 +104,7 @@ const rows: Fraternity[] = [
     isActive: true,
   },
   {
-    name: 'Z.A.G. Wisła',
+    name: 'ZAG Wisła',
     motto: 'Omnia pro Patria',
     founded: '1913-05-24',
     foundedIn: 'Gdańsk, Polska',
@@ -445,7 +446,7 @@ const rows: Fraternity[] = [
     <QCard style="height: 100%" flat bordered>
       <QTable
         style="height: 100%"
-        title="Fraternities"
+        :title="i18n.t('fraternities.title')"
         :rows="rows"
         :columns="columns"
         row-key="name"
