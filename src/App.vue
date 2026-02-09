@@ -1,107 +1,34 @@
 <script setup lang="ts">
-import { QLayout, QDrawer, QPageContainer, QFooter } from 'quasar'
-import { computed, ref } from 'vue'
-import NavButton from '@/components/NavButton.vue'
-import { formatGoogleMapsState } from '@/views/Map/utils/formatGoogleMapsState.ts'
-import { DEFAULT_MAP_STATE } from '@/const.ts'
-import { useMapStore } from '@/stores/map/map.ts'
-import { breakpointsQuasar, useBreakpoints } from '@vueuse/core'
-import i18n from '@/plugins/i18n.plugin.ts';
 
-const mapStore = useMapStore()
-const breakpoints = useBreakpoints(breakpointsQuasar)
-
-const isDrawerOpen = ref(true)
-const isMobile = computed(() => breakpoints.smaller('sm'))
-
-const navButtons = computed(() => [
-  {
-    icon: 'o_map',
-    text: i18n.t('leftNav.map'),
-    to: {
-      name: 'map',
-      params: {
-        state: mapStore.lastState ?? formatGoogleMapsState(DEFAULT_MAP_STATE),
-      },
-    },
-  },
-  {
-    icon: 'o_group',
-    text: i18n.t('leftNav.fraternities'),
-    to: { name: 'fraternities' },
-  },
-  {
-    icon: 'o_church',
-    text: i18n.t('leftNav.cemeteries'),
-    to: { name: 'cemeteries' },
-  },
-  {
-    icon: 'o_location_on',
-    text: i18n.t('leftNav.burials'),
-    to: { name: 'burials' },
-  },
-])
+import TopBar from '@/components/TopBar.vue'
 </script>
 
 <template>
-  <QLayout view="lHh lpR lFf">
-    <QDrawer
-      v-if="!isMobile.value"
-      side="left"
-      :width="72"
-      v-model="isDrawerOpen"
-      persistent
-      bordered
-      behavior="desktop"
-      class="app-nav-panel bg-grey-1"
-      show-if-above
-    >
-      <NavButton
-        v-for="button in navButtons"
-        :key="button.icon"
-        :icon="button.icon"
-        :text="button.text"
-        :to="button.to"
-      />
-    </QDrawer>
+  <div class="app-shell">
+    <TopBar />
 
-    <QFooter v-else bordered class="app-bottom-nav-panel bg-grey-1">
-      <NavButton
-        v-for="button in navButtons"
-        :key="button.icon"
-        :icon="button.icon"
-        :text="button.text"
-        :to="button.to"
-      />
-    </QFooter>
-
-    <QPageContainer style="height: 100vh">
+    <main class="app-main">
       <RouterView />
-    </QPageContainer>
-  </QLayout>
+    </main>
+  </div>
 </template>
 
 <style scoped lang="scss">
-:deep(.app-nav-panel) {
+.app-shell {
+  min-height: 100vh;
+  background: var(--color-background-primary);
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  padding-top: 1rem;
-}
 
-:deep(.app-bottom-nav-panel) {
-  display: flex;
+  .app-main {
+    flex: 1;
+    display: flex;
+    min-height: 0;
 
-  a {
-    flex: 1 1 auto;
+    & > * {
+      flex: 1;
+      min-width: 0;
+    }
   }
-}
-</style>
-
-<style lang="scss">
-.ls-page {
-  padding: 1.5rem;
-  background-color: $blue-grey-2;
-  height: 100%;
 }
 </style>

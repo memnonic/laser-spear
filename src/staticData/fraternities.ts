@@ -1,63 +1,6 @@
-<script setup lang="ts">
-import { QCard, QTable, type QTableColumn } from 'quasar'
-import i18n from '@/plugins/i18n.plugin.ts';
+import type { Fraternity } from '@/types.ts'
 
-interface Fraternity {
-  name: string
-  motto: string
-  founded: string
-  foundedIn: string
-  colors: string[]
-  colorsRtl: boolean
-  isActive: boolean
-}
-
-const columns: QTableColumn<Fraternity>[] = [
-  {
-    name: 'isActive',
-    label: i18n.t('fraternities.table.isActive'),
-    field: (row) => (row.isActive ? i18n.t('common.yes') : i18n.t('common.no')),
-    align: 'center',
-    sortable: true,
-  },
-  {
-    name: 'colors',
-    label: i18n.t('fraternities.table.colors'),
-    field: 'colors',
-    align: 'center',
-    sortable: false,
-  },
-  {
-    name: 'name',
-    label: i18n.t('fraternities.table.name'),
-    field: (row) => row.name,
-    align: 'left',
-    sortable: true,
-  },
-  {
-    name: 'motto',
-    label: i18n.t('fraternities.table.motto'),
-    field: (row) => row.motto,
-    align: 'left',
-    sortable: false,
-  },
-  {
-    name: 'founded',
-    label: i18n.t('fraternities.table.founded'),
-    field: (row) => row.founded,
-    align: 'right',
-    sortable: true,
-  },
-  {
-    name: 'foundedIn',
-    label: i18n.t('fraternities.table.foundedIn'),
-    field: (row) => row.foundedIn,
-    align: 'left',
-    sortable: true,
-  },
-]
-
-const rows: Fraternity[] = [
+export default [
   {
     name: 'Konwent Polonia',
     motto: 'Jeden za wszystkich, wszyscy za jednego',
@@ -438,41 +381,4 @@ const rows: Fraternity[] = [
     colorsRtl: true,
     isActive: false,
   },
-]
-</script>
-
-<template>
-  <div class="fraternities-view ls-page">
-    <QCard style="height: 100%" flat bordered>
-      <QTable
-        style="height: 100%"
-        :title="i18n.t('fraternities.title')"
-        :rows="rows"
-        :columns="columns"
-        row-key="name"
-        binary-state-sort
-        hide-pagination
-        :rows-per-page-options="[0]"
-        :grid="$q.screen.lt.md"
-      >
-        <template v-slot:body-cell-colors="props">
-          <td style="display: flex; gap: 4px; justify-content: center; align-items: center;">
-            <div
-              v-for="color in props.row.colors"
-              :key="color"
-              :style="{
-                backgroundColor: color,
-                width: '16px',
-                height: '16px',
-                border: '1px solid #000',
-                borderRadius: '2px',
-              }"
-            ></div>
-          </td>
-        </template>
-      </QTable>
-    </QCard>
-  </div>
-</template>
-
-<style scoped></style>
+] as Fraternity[];

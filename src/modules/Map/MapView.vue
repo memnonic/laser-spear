@@ -1,12 +1,16 @@
 <script setup lang="ts">
 import { MglMap, useMap } from '@indoorequal/vue-maplibre-gl'
-import { watch } from 'vue'
+import { computed, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useDebounceFn } from '@vueuse/core'
 import type { MapRouteState } from '@/types.ts'
-import { formatGoogleMapsState } from '@/views/Map/utils/formatGoogleMapsState.ts'
+import { formatGoogleMapsState } from '@/modules/Map/utils/formatGoogleMapsState.ts'
 import { DEFAULT_MAP_STATE } from '@/const.ts'
 import { useMapStore } from '@/stores/map/map.ts'
+import { getBurialsAsGeoJSON } from '@/modules/Map/utils/getBurialsAsGeoJSON.ts'
+import burials from '@/staticData/burials.ts'
+import fraternities from '@/staticData/fraternities.ts'
+import MarkerFeature from '@/modules/Map/components/MarkerFeature.vue'
 
 const style = 'https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json'
 withDefaults(defineProps<MapRouteState>(), DEFAULT_MAP_STATE)
@@ -15,8 +19,9 @@ const route = useRoute()
 const router = useRouter()
 
 const map = useMap()
-
 const mapStore = useMapStore()
+
+const data = computed(() => getBurialsAsGeoJSON(burials, fraternities))
 
 const syncUrlFromMap = useDebounceFn(() => {
   if (!map.map) {
@@ -62,8 +67,16 @@ watch(
     height="100vh"
     @map:moveend="onMapMove"
     @map:zoomend="onMapMove"
-  />
+  >
+    <MglGeoJsonSource
+      source-id="geojson"
+      :data="data as unknown as maplibregl.MapSourceDataType"
+      cluster
+      :cluster-radius="35"
+    >
+      <MarkerFeature source-id="geojson" />
+    </MglGeoJsonSource>
+  </MglMap>
 </template>
 
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

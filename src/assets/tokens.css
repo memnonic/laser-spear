@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+:root {
+  --color-background-primary: #fafaf8;
+  --color-background-surface: #ffffff;
+  --color-background-subtle: #f3f4f2;
+
+  --color-border-default: #e5e7eb;
+  --color-border-strong: #d1d5db;
+
+  --color-text-primary: #1f2933;
+  --color-text-secondary: #6b7280;
+  --color-text-muted: #9ca3af;
+  --color-text-inverse: #ffffff;
+
+  --color-semantic-active: #2F6F55;
+  --color-semantic-inactive: #9ca3af;
+  --color-semantic-archived: #6b7280;
+  --color-semantic-error: #7c2d12;
+
+  --font-family-sans: 'Noto Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family-serif: 'Noto Serif', Georgia, 'Times New Roman', serif;
+
+  --font-size-xs: 11px;
+  --font-size-sm: 12px;
+  --font-size-base: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 22px;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.65;
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 24px;
+  --space-xxl: 32px;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  --stroke-thin: 1px;
+  --stroke-thick: 2px;
+
+  --shadow-none: none;
+  --shadow-subtle: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.06);
+
+
+  --motion-duration-fast: 120ms;
+  --motion-duration-normal: 160ms;
+  --motion-easing-standard: ease-out;
+
+
+  --map-background: #f7f7f5;
+  --map-roads: #e5e7eb;
+  --map-labels: #6b7280;
+  --map-boundaries: #9ca3af;
+
+  --map-marker-size: 6px;
+  --map-marker-border: 1px solid #ffffff;
+}
+
+:root[data-theme="dark"] {
+  --color-background-primary: #1c1f1d;
+  --color-background-surface: #242826;
+  --color-background-subtle: #2d322f;
+
+  --color-border-default: #3a3f3c;
+  --color-border-strong: #4b514d;
+
+  --color-text-primary: #e6e8e5;
+  --color-text-secondary: #b4b8b2;
+  --color-text-muted: #8a8f89;
+  --color-text-inverse: #1c1f1d;
+
+  --color-semantic-active: #4f8f73;
+  --color-semantic-inactive: #8a8f89;
+  --color-semantic-archived: #6f746f;
+  --color-semantic-error: #c47a5a;
+
+  --shadow-subtle: 0 1px 2px rgba(0,0,0,0.4);
+  --shadow-hover: 0 2px 6px rgba(0,0,0,0.6);
+
+  --map-background: #1a1d1b;
+  --map-roads: #2f3431;
+  --map-labels: #9aa09a;
+  --map-boundaries: #5f6560;
+}
+
+html {
+  font-family: var(--font-family-serif);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-primary);
+  background: var(--color-background-primary);
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.app-header,
+.app-nav,
+.view-actions,
+.view-search,
+.view-filter,
+.city-index {
+  font-family: var(--font-family-sans);
+}
