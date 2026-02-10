@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
 import { BurialsView, FraternitiesView, MapView } from '@/modules'
 import { parseGoogleMapsState } from '@/modules/Map/utils/parseGoogleMapsState.ts'
 import type { MapRouteState } from '@/types.ts'
@@ -15,7 +15,7 @@ export function isSupportedLang(lang: string | null): boolean {
 }
 
 export const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
       /* Root bez języka - wtedy redirect */
