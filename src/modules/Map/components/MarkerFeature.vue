@@ -118,6 +118,7 @@ function updateMarkers() {
 
     let autoId = 0;
 
+    // @ts-expect-error TS2345
     featureList.forEach((feature: maplibregl.Feature) => {
       const isCluster = !!feature.properties?.cluster;
 

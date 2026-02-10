@@ -36,12 +36,12 @@ const filteredBurials = computed(() => {
     <header class="detail-header">
       <div class="detail-header-inner">
         <h1 class="cemetery-title">
-          {{ cemetery.name }}
+          {{ cemetery?.name }}
         </h1>
 
         <p class="cemetery-subtitle">
-          {{ cemetery.city }}
-          · {{ cemetery.founded ?? 1848 }}–{{ cemetery.closed ?? i18n.t('common.today') }}
+          {{ cemetery?.city }}
+          · {{ cemetery?.founded ?? 1848 }}–{{ cemetery?.closed ?? i18n.t('common.today') }}
         </p>
 
         <nav class="detail-tabs" role="tablist">
@@ -77,17 +77,17 @@ const filteredBurials = computed(() => {
         <dl class="facts-list">
           <div class="fact">
             <dt>{{ i18n.t('cemeteryDetails.page.info.established') }}</dt>
-            <dd>{{ cemetery.founded ?? 1848 }}</dd>
+            <dd>{{ cemetery?.founded ?? 1848 }}</dd>
           </div>
 
-          <div class="fact">
-            <dt>{{ i18n.t('cemeteryDetails.page.info.status') }}</dt>
-            <dd>{{ cemetery.status ?? i18n.t('cemeteryDetails.page.info.status.active') }}</dd>
-          </div>
+<!--          <div class="fact">-->
+<!--            <dt>{{ i18n.t('cemeteryDetails.page.info.status') }}</dt>-->
+<!--            <dd>{{ cemetery.status ?? i18n.t('cemeteryDetails.page.info.status.active') }}</dd>-->
+<!--          </div>-->
 
           <div class="fact">
             <dt>{{ i18n.t('cemeteryDetails.page.info.burials') }}</dt>
-            <dd>{{ cemetery.burialsCount ?? 2137 }}</dd>
+            <dd>{{ cemetery?.burialsCount ?? 2137 }}</dd>
           </div>
         </dl>
       </section>

@@ -12,6 +12,9 @@ export interface Fraternity {
   colors: string[]
   colorsRtl: boolean
   isActive: boolean
+
+  burials?: number;
+  id?: string;
 }
 
 export type ISODate = string; // YYYY-MM-DD
@@ -25,6 +28,8 @@ interface GraveLocation {
 }
 
 export interface Burial {
+  id?: string;
+
   cemetery: string;
   city: string;
 
@@ -61,4 +66,6 @@ export interface Cemetery {
   openingHours: string | null
 
   notes?: string | null
+
+  burialsCount?: number
 }

@@ -15,7 +15,7 @@ const filteredBurials = computed(() => {
   return burials.filter((b) => `${b.surname} ${b.firstName}`.toLowerCase().includes(q))
 })
 
-function goToBurial(id: string) {
+function goToBurial(id?: string) {
   router.push({ name: 'burial-detail', params: { id } })
 }
 </script>

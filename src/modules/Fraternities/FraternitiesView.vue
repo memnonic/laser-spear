@@ -15,7 +15,7 @@ const filteredFraternities = computed(() => {
   return fraternities.filter((f) => f.name.toLowerCase().includes(q))
 })
 
-function goToFraternity(id: string) {
+function goToFraternity(id?: string) {
   router.push({ name: 'fraternity-detail', params: { id } })
 }
 </script>
