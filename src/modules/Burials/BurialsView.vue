@@ -3,6 +3,7 @@ import burials from '@/staticData/burials.ts'
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import PageTopBar from '@/components/PageTopBar.vue'
+import i18n from '@/plugins/i18n.plugin.ts'
 
 const router = useRouter()
 const query = ref('')
@@ -22,9 +23,9 @@ function goToBurial(id: string) {
 <template>
   <section class="burials-view">
     <PageTopBar
-      title="Pochówki"
-      subtitle="Rejestr pochówków wprowadzonych do systemu"
-      search-placeholder="Szukaj osoby, cmentarza, miasta lub korporacji..."
+      :title="i18n.t('burials.page.title')"
+      :subtitle="i18n.t('burials.page.subtitle')"
+      :search-placeholder="i18n.t('burials.page.search.placeholder')"
       has-search
       has-filter
     />

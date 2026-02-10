@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import i18n from '@/plugins/i18n.plugin.ts'
+
 interface Props {
   title: string
   subtitle?: string
@@ -28,7 +30,7 @@ withDefaults(defineProps<Props>(), {
           :placeholder="searchPlaceholder"
           class="view-search"
         />
-        <button v-if="hasFilter" class="view-filter">Filtry</button>
+        <button v-if="hasFilter" class="view-filter">{{ i18n.t('pageTop.filters') }}</button>
       </div>
     </div>
   </header>

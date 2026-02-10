@@ -2,6 +2,8 @@
 import cemeteries from '@/staticData/cemeteries.ts'
 import type { Cemetery } from '@/types.ts'
 import { useRouter } from 'vue-router'
+import PageTopBar from '@/components/PageTopBar.vue'
+import i18n from '@/plugins/i18n.plugin.ts'
 
 const router = useRouter()
 
@@ -59,13 +61,13 @@ function goToCemetery(slug: string) {
 
 <template>
   <section class="cemeteries-view">
-    <!-- Header -->
-    <header class="view-header">
-      <div class="view-header-inner">
-        <h1 class="view-title">Cmentarze</h1>
-        <p class="view-subtitle">Rejestr cmentarzy wprowadzonych do systemu</p>
-      </div>
-    </header>
+    <PageTopBar
+      :title="i18n.t('cemeteries.page.title')"
+      :subtitle="i18n.t('cemeteries.page.subtitle')"
+      :search-placeholder="i18n.t('cemeteries.page.search.placeholder')"
+      has-filter
+      has-search
+    />
 
     <!-- Content -->
     <div class="view-content">
@@ -111,8 +113,8 @@ function goToCemetery(slug: string) {
                 </span>
 
                 <span class="cemetery-meta">
-                  {{ cemetery.founded ?? 1970 }} - {{ cemetery.closed ?? 'dziś' }} ·
-                  {{ cemetery.burialsCount ?? 2137 }} pochówków
+                  {{ cemetery.founded ?? '****' }} - {{ cemetery.closed ?? i18n.t('common.today') }} ·
+                  {{ i18n.t('common.burials', cemetery.burialsCount ?? 2137) }}
                 </span>
               </li>
             </ul>
@@ -235,7 +237,13 @@ function goToCemetery(slug: string) {
   display: flex;
   align-items: baseline;
   gap: var(--space-md);
-  padding: var(--space-2xs) 0;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+
+  &:hover {
+    background: var(--color-background-subtle);
+  }
 }
 
 .cemetery-name {

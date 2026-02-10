@@ -3,6 +3,7 @@ import fraternities from '@/staticData/fraternities.ts'
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import PageTopBar from '@/components/PageTopBar.vue'
+import i18n from '@/plugins/i18n.plugin.ts'
 
 const router = useRouter()
 const query = ref('')
@@ -22,27 +23,14 @@ function goToFraternity(id: string) {
 <template>
   <section class="fraternities-view">
     <PageTopBar
-      title="Korporacje"
-      subtitle="Rejestr korporacji akademickich wprowadzonych do systemu"
-      search-placeholder="Szukaj korporacji akademickiej..."
+      :title="i18n.t('fraternities.page.title')"
+      :subtitle="i18n.t('fraternities.page.subtitle')"
+      :search-placeholder="i18n.t('fraternities.page.search.placeholder')"
       has-search
       has-filter
     />
 
-    <!-- Content -->
     <div class="view-content">
-      <!-- Filter -->
-      <div class="fraternities-filter">
-        <input
-          v-model="query"
-          type="search"
-          placeholder="Filtruj nazwy…"
-          class="fraternities-search"
-        />
-        <span class="fraternities-count"> {{ filteredFraternities.length }} korporacji </span>
-      </div>
-
-      <!-- List -->
       <ul class="fraternities-list">
         <li
           v-for="fraternity in filteredFraternities"
@@ -55,10 +43,12 @@ function goToFraternity(id: string) {
               {{ fraternity.name }}
             </span>
 
-            <span v-if="fraternity.motto" class="fraternity-motto"> „{{ fraternity.motto }}” </span>
+            <span v-if="fraternity.motto" class="fraternity-motto"> "{{ fraternity.motto }}" </span>
 
             <span class="fraternity-meta">
-              <span class="fraternity-meta-item"> Barwy: {{ fraternity.colors.join(' - ') }} </span>
+              <span class="fraternity-meta-item">
+                {{ i18n.t('fraternities.page.entry.colors') }} {{ fraternity.colors.join(' - ') }}
+              </span>
 
               <span class="fraternity-meta-item">
                 {{ fraternity.foundedIn }}
@@ -72,12 +62,16 @@ function goToFraternity(id: string) {
                 class="fraternity-status"
                 :class="fraternity.isActive ? 'is-active' : 'is-inactive'"
               >
-                {{ fraternity.isActive ? 'aktywna' : 'nieaktywna' }}
+                {{
+                  fraternity.isActive
+                    ? i18n.t('fraternities.page.entry.activity.active')
+                    : i18n.t('fraternities.page.entry.activity.inactive')
+                }}
               </span>
             </span>
           </div>
 
-          <span class="fraternity-count"> {{ fraternity.burialsCount }} 123 pochówków </span>
+          <span class="fraternity-count"> {{ i18n.t('common.burials', fraternity.burials ?? 2137) }} </span>
         </li>
       </ul>
     </div>

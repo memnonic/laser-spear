@@ -9,7 +9,6 @@ import { DEFAULT_MAP_STATE } from '@/const.ts'
 import { useMapStore } from '@/stores/map/map.ts'
 import { getBurialsAsGeoJSON } from '@/modules/Map/utils/getBurialsAsGeoJSON.ts'
 import burials from '@/staticData/burials.ts'
-import fraternities from '@/staticData/fraternities.ts'
 import MarkerFeature from '@/modules/Map/components/MarkerFeature.vue'
 
 const style = 'https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json'
@@ -21,7 +20,7 @@ const router = useRouter()
 const map = useMap()
 const mapStore = useMapStore()
 
-const data = computed(() => getBurialsAsGeoJSON(burials, fraternities))
+const data = computed(() => getBurialsAsGeoJSON(burials))
 
 const syncUrlFromMap = useDebounceFn(() => {
   if (!map.map) {
@@ -59,24 +58,26 @@ watch(
 </script>
 
 <template>
-  <MglMap
-    :map-style="style"
-    :center="[lng, lat]"
-    :zoom="zoom"
-    :attribution-control="false"
-    height="100vh"
-    @map:moveend="onMapMove"
-    @map:zoomend="onMapMove"
-  >
-    <MglGeoJsonSource
-      source-id="geojson"
-      :data="data as unknown as maplibregl.MapSourceDataType"
-      cluster
-      :cluster-radius="35"
+  <section class="map-view">
+    <MglMap
+      :map-style="style"
+      :center="[lng, lat]"
+      :zoom="zoom"
+      :attribution-control="false"
+      height="100%"
+      @map:moveend="onMapMove"
+      @map:zoomend="onMapMove"
     >
-      <MarkerFeature source-id="geojson" />
-    </MglGeoJsonSource>
-  </MglMap>
+      <MglGeoJsonSource
+        source-id="geojson"
+        :data="data as unknown as maplibregl.MapSourceDataType"
+        cluster
+        :cluster-radius="35"
+      >
+        <MarkerFeature source-id="geojson" />
+      </MglGeoJsonSource>
+    </MglMap>
+  </section>
 </template>
 
 <style scoped lang="scss"></style>

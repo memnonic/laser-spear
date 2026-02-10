@@ -1,9 +1,40 @@
 <script setup lang="ts">
 import { useTheme } from '@/composables/useTheme.ts'
 import { useLanguage } from '@/composables/useLanguage.ts'
+import { useMapStore } from '@/stores/map/map.ts'
+import { computed } from 'vue'
+import { DEFAULT_MAP_STATE } from '@/const.ts'
+import { formatGoogleMapsState } from '@/modules/Map/utils/formatGoogleMapsState.ts'
+import i18n from '@/plugins/i18n.plugin.ts'
 
 const { theme, toggleTheme } = useTheme()
 const { currentLang, availableLangs, setLanguage } = useLanguage()
+const mapStore = useMapStore()
+
+const navLinks = computed(() => [
+  {
+    text: i18n.t('topNav.link.map'),
+    to: {
+      name: 'map',
+      params: {
+        lang: currentLang.value,
+        state: mapStore.lastState ?? formatGoogleMapsState(DEFAULT_MAP_STATE),
+      },
+    },
+  },
+  {
+    text: i18n.t('topNav.link.fraternities'),
+    to: { name: 'fraternities', params: { lang: currentLang.value } },
+  },
+  {
+    text: i18n.t('topNav.link.cemeteries'),
+    to: { name: 'cemeteries-list', params: { lang: currentLang.value } },
+  },
+  {
+    text: i18n.t('topNav.link.burials'),
+    to: { name: 'burials', params: { lang: currentLang.value } },
+  },
+])
 
 function onChange(event: Event) {
   const value = (event.target as HTMLSelectElement).value
@@ -19,7 +50,11 @@ function onChange(event: Event) {
     </div>
 
     <div class="app-header-right">
-      <input type="search" placeholder="Szukaj osób, korporacji, cmentarzy" class="global-search" />
+      <input
+        type="search"
+        :placeholder="i18n.t('topNav.globalSearch.placeholder')"
+        class="global-search"
+      />
 
       <div class="app-controls">
         <select :value="currentLang" class="app-select" @change="onChange">
@@ -28,11 +63,7 @@ function onChange(event: Event) {
           </option>
         </select>
 
-        <button
-          class="theme-toggle"
-          :aria-label="theme === 'dark' ? 'Tryb nocny' : 'Tryb dzienny'"
-          @click="toggleTheme"
-        >
+        <button class="theme-toggle" @click="toggleTheme">
           {{ theme === 'dark' ? '☀' : '☾' }}
         </button>
       </div>
@@ -40,10 +71,9 @@ function onChange(event: Event) {
   </header>
 
   <nav class="app-nav">
-    <RouterLink :to="`/${currentLang}/map`" class="nav-item">Mapa</RouterLink>
-    <RouterLink :to="`/${currentLang}/fraternities`" class="nav-item">Korporacje</RouterLink>
-    <RouterLink :to="`/${currentLang}/cemeteries`" class="nav-item">Cmentarze</RouterLink>
-    <RouterLink :to="`/${currentLang}/burials`" class="nav-item">Pochówki</RouterLink>
+    <RouterLink v-for="link in navLinks" :key="link.to.name" :to="link.to" class="nav-item">{{
+      link.text
+    }}</RouterLink>
   </nav>
 </template>
 

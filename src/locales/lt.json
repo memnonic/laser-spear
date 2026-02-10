@@ -1,0 +1,38 @@
+{
+  "common.burials": "{count} palaidojimas | {count} palaidojimai | {count} palaidojimų",
+  "common.today": "šiandien",
+
+  "topNav.link.map": "Žemėlapis",
+  "topNav.link.fraternities": "Korporacijos",
+  "topNav.link.cemeteries": "Kapinės",
+  "topNav.link.burials": "Palaidojimai",
+  "topNav.globalSearch.placeholder": "Ieškoti asmenų, korporacijų, kapinių...",
+
+  "pageTop.filters": "Filtrai",
+
+  "fraternities.page.title": "Korporacijos",
+  "fraternities.page.subtitle": "Į sistemą įtrauktų akademinių korporacijų registras",
+  "fraternities.page.search.placeholder": "Ieškoti akademinės korporacijos...",
+  "fraternities.page.entry.colors": "Spalvos:",
+  "fraternities.page.entry.activity.active": "aktyvi",
+  "fraternities.page.entry.activity.inactive": "neaktyvi",
+
+  "cemeteries.page.title": "Kapinės",
+  "cemeteries.page.subtitle": "Į sistemą įtrauktų kapinių registras",
+  "cemeteries.page.search.placeholder": "Ieškoti miestų, kapinių...",
+
+  "cemeteryDetails.page.tabs.info": "Informacija",
+  "cemeteryDetails.page.tabs.burials": "Palaidojimai",
+  "cemeteryDetails.page.tabs.stats": "Statistika",
+  "cemeteryDetails.page.info.subtitle": "Informacija",
+  "cemeteryDetails.page.info.established": "Įkurtos",
+  "cemeteryDetails.page.info.status": "Statusas",
+  "cemeteryDetails.page.info.status.active": "Aktyvios",
+  "cemeteryDetails.page.info.status.inactive": "Neaktyvios",
+  "cemeteryDetails.page.info.burials": "Palaidojimai",
+  "cemeteryDetails.page.stats.placeholder": "Palaidojimų statistika (metai, korporacijos, sektoriai)",
+
+  "burials.page.title": "Palaidojimai",
+  "burials.page.subtitle": "Į sistemą įtrauktų palaidojimų registras",
+  "burials.page.search.placeholder": "Ieškoti asmens, kapinių, miesto ar korporacijos..."
+}

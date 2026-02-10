@@ -6,15 +6,16 @@ import de from '@/locales/de.json'
 import lv from '@/locales/lv.json'
 import ee from '@/locales/ee.json'
 import ru from '@/locales/ru.json'
+import lt from '@/locales/lt.json'
 
-export const SUPPORTED_LANGS = ['pl', 'en', 'de', 'lv', 'ee', 'ru'] as const
+export const SUPPORTED_LANGS = ['pl', 'en', 'de', 'lv', 'ee', 'ru', 'lt'] as const
 export type Lang = (typeof SUPPORTED_LANGS)[number]
 
 const i18n = createI18n({
   legacy: false,
   locale: 'pl',
   fallbackLocale: 'en',
-  messages: { pl, en, de, lv, ee, ru },
+  messages: { pl, en, de, lv, ee, ru, lt },
   flatJson: true,
   globalInjection: true,
 })
