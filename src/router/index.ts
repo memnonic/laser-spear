@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import { BurialsView, FraternitiesView, MapView } from '@/modules'
 import { parseGoogleMapsState } from '@/modules/Map/utils/parseGoogleMapsState.ts'
 import type { MapRouteState } from '@/types.ts'

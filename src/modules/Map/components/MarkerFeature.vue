@@ -11,6 +11,7 @@ interface IMarkerFeature {
     coordinates: [number, number],
   },
   properties: {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     [key: string]: any,
     cluster?: boolean,
     cluster_id?: number,
@@ -34,7 +35,7 @@ const props = withDefaults(defineProps<Props>(), {
   maxZoom: 24,
 });
 
-const emit = defineEmits<{
+defineEmits<{
   (e: 'marker-click', id: string): void
 }>();
 
@@ -141,8 +142,10 @@ function updateMarkers() {
       }
 
       featureMap.set(id, {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         ...feature as any,
         id,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         geometry: feature.geometry as any,
         properties: feature.properties || {}
       });
