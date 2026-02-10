@@ -1,0 +1,38 @@
+{
+  "common.burials": "{count} qeng | {count} qengmey",
+  "common.today": "DaHjaj",
+
+  "topNav.link.map": "He De’ pat",
+  "topNav.link.fraternities": "tay pongmey",
+  "topNav.link.cemeteries": "mol pongmey",
+  "topNav.link.burials": "qeng pongmey",
+  "topNav.globalSearch.placeholder": "nuv pongmey, tay pongmey, mol pongmey nej...",
+
+  "pageTop.filters": "chelmeH SeHmey",
+
+  "fraternities.page.title": "tay pongmey",
+  "fraternities.page.subtitle": "pat wa’DIchDaq chelpu’bogh tay pongmey tetlh",
+  "fraternities.page.search.placeholder": "tay pong nej...",
+  "fraternities.page.entry.colors": "nguv pongmey:",
+  "fraternities.page.entry.activity.active": "DoHtaH",
+  "fraternities.page.entry.activity.inactive": "DoHbe’taH",
+
+  "cemeteries.page.title": "mol pongmey",
+  "cemeteries.page.subtitle": "pat wa’DIchDaq chelpu’bogh mol pongmey tetlh",
+  "cemeteries.page.search.placeholder": "veng pongmey, mol pongmey nej...",
+
+  "cemeteryDetails.page.tabs.info": "De’",
+  "cemeteryDetails.page.tabs.burials": "qeng pongmey",
+  "cemeteryDetails.page.tabs.stats": "De’ pat poQ",
+  "cemeteryDetails.page.info.subtitle": "De’",
+  "cemeteryDetails.page.info.established": "chenmoHlu’pu’",
+  "cemeteryDetails.page.info.status": "Dotlh",
+  "cemeteryDetails.page.info.status.active": "DoHtaH",
+  "cemeteryDetails.page.info.status.inactive": "DoHbe’taH",
+  "cemeteryDetails.page.info.burials": "qeng pongmey",
+  "cemeteryDetails.page.stats.placeholder": "qeng pongmey De’ pat poQ (DIS pongmey, tay pongmey, botlh pongmey)",
+
+  "burials.page.title": "qeng pongmey",
+  "burials.page.subtitle": "pat wa’DIchDaq chelpu’bogh qeng pongmey tetlh",
+  "burials.page.search.placeholder": "nuv pong, mol pong, veng pong pagh tay pong nej..."
+}

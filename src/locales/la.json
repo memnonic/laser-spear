@@ -1,0 +1,38 @@
+{
+  "common.burials": "{count} sepultura | {count} sepulturae",
+  "common.today": "hodie",
+
+  "topNav.link.map": "Tabula",
+  "topNav.link.fraternities": "Corporationes",
+  "topNav.link.cemeteries": "Coemeteria",
+  "topNav.link.burials": "Sepulturae",
+  "topNav.globalSearch.placeholder": "Quaerere personas, corporationes, coemeteria...",
+
+  "pageTop.filters": "Filtra",
+
+  "fraternities.page.title": "Corporationes",
+  "fraternities.page.subtitle": "Index corporationum academicarum in systema relatarum",
+  "fraternities.page.search.placeholder": "Quaerere corporationem academicam...",
+  "fraternities.page.entry.colors": "Colores:",
+  "fraternities.page.entry.activity.active": "activa",
+  "fraternities.page.entry.activity.inactive": "inactiva",
+
+  "cemeteries.page.title": "Coemeteria",
+  "cemeteries.page.subtitle": "Index coemeteriorum in systema relatorum",
+  "cemeteries.page.search.placeholder": "Quaerere urbes, coemeteria...",
+
+  "cemeteryDetails.page.tabs.info": "Informatio",
+  "cemeteryDetails.page.tabs.burials": "Sepulturae",
+  "cemeteryDetails.page.tabs.stats": "Statistica",
+  "cemeteryDetails.page.info.subtitle": "Informatio",
+  "cemeteryDetails.page.info.established": "Conditum",
+  "cemeteryDetails.page.info.status": "Status",
+  "cemeteryDetails.page.info.status.active": "Activus",
+  "cemeteryDetails.page.info.status.inactive": "Inactivus",
+  "cemeteryDetails.page.info.burials": "Sepulturae",
+  "cemeteryDetails.page.stats.placeholder": "Statistica sepulturarum (anni, corporationes, sectores)",
+
+  "burials.page.title": "Sepulturae",
+  "burials.page.subtitle": "Index sepulturarum in systema relatarum",
+  "burials.page.search.placeholder": "Quaerere personam, coemeterium, urbem aut corporationem..."
+}
